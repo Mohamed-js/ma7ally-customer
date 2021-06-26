@@ -1,0 +1,75 @@
+@keyframes zoom-in-out {
+  0% {
+    letter-spacing: 2px;
+  }
+
+  100% {
+    letter-spacing: 1px;
+  }
+}
+
+.cover {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.cover div {
+  text-align: center;
+  font-size: 75px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.164);
+}
+
+.cover h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 75px;
+  background-color: rgba(0, 0, 0, 0.582);
+  color: #ff9800;
+  padding: 10px;
+  animation: zoom-in-out 1s alternate-reverse infinite ease-in-out;
+}
+
+.long-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+  grid-gap: 15px;
+  grid-auto-flow: column;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.long-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  width: 65%;
+  min-width: 195px;
+  height: 265px;
+  box-shadow: rgba(128, 128, 128, 0.384) 1px 1px 5px;
+}
+
+.item-img {
+  height: 120px;
+}
+
+.item-img img {
+  object-fit: contain;
+  max-height: 120px;
+}
+
+.item-info {
+  height: 50px;
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+}
