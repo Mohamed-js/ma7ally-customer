@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 import { storeIndex } from '../Helpers';
 import '../styles/home.css';
@@ -14,7 +14,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* {store && console.log(store) && ( */}
       {store && (
         <div
           className="cover flex-col align-center justify-center"
@@ -36,17 +35,19 @@ const Home = () => {
                 if (item.category_id === category.id) {
                   return (
                     <div className="card p-2">
-                      <h3 className="text-center pt-2">{item.name}</h3>
-                      <p className="text-center secondary">
-                        {item.size} {item.unit}
-                      </p>
-                      <div className="item-img m-2">
-                        <img
-                          src={item.image_data}
-                          alt={item.name}
-                          className="full-img"
-                        />
-                      </div>
+                      <Link to={`${storename.storename}/item/${item.id}`}>
+                        <h3 className="text-center pt-2">{item.name}</h3>
+                        <p className="text-center secondary">
+                          {item.size} {item.unit}
+                        </p>
+                        <div className="item-img m-2">
+                          <img
+                            src={item.image_data}
+                            alt={item.name}
+                            className="full-img"
+                          />
+                        </div>
+                      </Link>
                       <div className="item-info flex-col justify-center mt-3">
                         <div className="m-1 mb-0">
                           <StarRatings

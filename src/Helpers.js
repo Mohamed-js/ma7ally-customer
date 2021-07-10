@@ -45,9 +45,9 @@ export const storeCategories = async (token) => {
   return respond;
 };
 
-export const storeItem = async (token, itemId) => {
-  const respond = await fetch(`${baseURL}/items/${itemId}`, {
-    headers: { 'Content-Type': 'application/json', Authorization: token },
+export const storeItem = async (storename, itemId) => {
+  const respond = await fetch(`${baseURL}/${storename}/items/${itemId}`, {
+    headers: { 'Content-Type': 'application/json' },
     method: 'GET',
   })
     .then((res) => res.json())

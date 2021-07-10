@@ -58,7 +58,7 @@ hr {
 }
 
 .bg-gradient-secondary {
-  background: linear-gradient(to left, #ff9800, #d68100);
+  background: linear-gradient(to left, #f9a62b, #d68100);
 }
 
 .bg-tertiary {
@@ -114,6 +114,10 @@ hr {
 .btn {
   border: none;
   border-radius: 4px;
+}
+
+.btn-block {
+  width: 100%;
 }
 
 .fit-cover {
@@ -356,4 +360,15 @@ hr {
 
 .cat-max-height {
   height: 70px;
+}
+
+.hr-short {
+  width: 60px;
+  margin-left: 7px;
+  border: #370640c4 solid 1px;
+}
+
+.reviews {
+  margin-left: 10px;
+  color: rgba(128, 128, 128, 0.562);
 }
