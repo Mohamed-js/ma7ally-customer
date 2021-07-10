@@ -73,3 +73,9 @@
   display: grid;
   grid-template-columns: 5fr 2fr;
 }
+
+.show-all {
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 300;
+}

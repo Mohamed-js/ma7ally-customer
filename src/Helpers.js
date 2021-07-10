@@ -35,9 +35,9 @@ export const storeIndex = async (id) => {
   return respond;
 };
 
-export const storeCategories = async (token) => {
-  const respond = await fetch(`${baseURL}/trader-categories`, {
-    headers: { 'Content-Type': 'application/json', Authorization: token },
+export const storeCategories = async (storename, catId) => {
+  const respond = await fetch(`${baseURL}/store/${storename}?cat_id=${catId}`, {
+    headers: { 'Content-Type': 'application/json' },
     method: 'GET',
   })
     .then((res) => res.json())

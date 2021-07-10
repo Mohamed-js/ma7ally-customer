@@ -28,7 +28,14 @@ const Home = () => {
       {store &&
         store.categories.map((category) => (
           <div key={category.id} className="cat-holder p-2 pt-4">
-            <h3 className="p3">{category.name.toUpperCase()}</h3>
+            <h3 className="p3">
+              {category.name.toUpperCase()}
+              {/* eslint-disable-next-line */}
+              <Link
+                to={`${storename.storename}/category/${category.id}`}
+                className="show-all secondary">{`show all >>`}</Link>
+            </h3>
+
             <div className="long-grid mt-3 p-1">
               {/* eslint-disable-next-line */}
               {store.items.map((item) => {
