@@ -1,10 +1,10 @@
 const baseURL = 'http://localhost:3000/api/v1';
 
 export const signup = async (credits) => {
-  const respond = await fetch(`${baseURL}/traders`, {
+  const respond = await fetch(`${baseURL}/users`, {
     headers: { 'Content-Type': 'application/json' },
     method: 'POST',
-    body: JSON.stringify({ trader: credits }),
+    body: JSON.stringify({ user: credits }),
   })
     .then((res) => res.json())
     .then((data) => data);
@@ -12,7 +12,7 @@ export const signup = async (credits) => {
 };
 
 export const signin = async (credits) => {
-  const respond = await fetch(`${baseURL}/sessions`, {
+  const respond = await fetch(`${baseURL}/user_sessions`, {
     headers: { 'Content-Type': 'application/json' },
     method: 'POST',
     body: JSON.stringify(credits),
@@ -23,7 +23,6 @@ export const signin = async (credits) => {
 };
 
 // New methods
-
 // Categories with limited products
 export const storeIndex = async (id) => {
   const respond = await fetch(`${baseURL}/store?id=${id}`, {

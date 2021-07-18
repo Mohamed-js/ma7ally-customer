@@ -372,3 +372,12 @@ hr {
   margin-left: 10px;
   color: rgba(128, 128, 128, 0.562);
 }
+
+.fixed {
+  position: fixed;
+  z-index: 1;
+}
+
+.w-100 {
+  width: 100%;
+}

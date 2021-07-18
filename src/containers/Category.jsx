@@ -11,7 +11,7 @@ const Category = () => {
     storeCategories(param.storename, param.id).then((data) =>
       setCatItems(data)
     );
-  }, []);
+  }, [param.id, param.storename]);
 
   return (
     <div>

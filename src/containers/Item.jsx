@@ -12,7 +12,7 @@ const Item = () => {
 
   useEffect(() => {
     storeItem(itemId.storename, itemId.id).then((data) => setItem(data));
-  }, []);
+  }, [itemId.id, itemId.storename]);
 
   return (
     <div className="container flex-col">

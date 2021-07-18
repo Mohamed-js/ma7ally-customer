@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
+import Navbar from '../components/Navbar.jsx';
 import { storeIndex } from '../Helpers';
 import '../styles/home.css';
 
@@ -14,6 +15,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navbar />
       {store && (
         <div
           className="cover flex-col align-center justify-center"
