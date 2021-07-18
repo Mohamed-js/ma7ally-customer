@@ -35,7 +35,7 @@ const Login = () => {
       'Ma7ally-token',
       JSON.stringify(respond.authentication_token)
     );
-    history.goBack();
+    history.go(-2);
   };
 
   return (

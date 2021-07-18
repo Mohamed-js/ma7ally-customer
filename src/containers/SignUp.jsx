@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import { signup } from '../Helpers';
 
 const SignUp = () => {
@@ -32,7 +33,7 @@ const SignUp = () => {
         'Ma7ally-token',
         JSON.stringify(respond.authentication_token)
       );
-      history.goBack();
+      history.go(-2);
     }
   };
 
@@ -93,6 +94,10 @@ const SignUp = () => {
           value="SIGN UP"
         />
       </form>
+
+      <Link to="/login" className="p-3">
+        Already have an account? Click here...
+      </Link>
     </div>
   );
 };

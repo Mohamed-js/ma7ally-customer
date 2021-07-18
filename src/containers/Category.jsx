@@ -15,7 +15,6 @@ const Category = () => {
 
   return (
     <div>
-      {/* console.log(catItems) && */}
       {catItems && (
         <div>
           {catItems[0] && (

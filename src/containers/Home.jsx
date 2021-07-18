@@ -1,20 +1,65 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import StarRatings from 'react-star-ratings';
 import Navbar from '../components/Navbar.jsx';
+import Dialog from '../components/Dialog.jsx';
+import QuantityDialog from '../components/QuantityDialog.jsx';
 import { storeIndex } from '../Helpers';
 import '../styles/home.css';
 
 const Home = () => {
   const [store, setStore] = useState();
+  const [quantity, setQuantity] = useState();
+  const history = useHistory();
+  const [dialog, setDialog] = useState();
+  const [quantityDialog, setQuantityDialog] = useState();
+  const [itemToQuantify, setItemToquantify] = useState();
   const storename = useParams(':storename');
-
+  const user = JSON.parse(sessionStorage.getItem('Ma7ally-token'));
   useEffect(() => {
     storeIndex(storename.storename).then((data) => setStore(data));
   }, [storename]);
 
+  const handleAdd = (itemId, itemName) => {
+    if (user) {
+      // Do something
+      setQuantityDialog(true);
+      setItemToquantify({ itemId: itemId, itemName: itemName });
+    } else {
+      setDialog(true);
+    }
+  };
+
   return (
     <div>
+      {dialog && (
+        <Dialog
+          head="Attention..."
+          headClass="bg-gradient white"
+          body="You have to sign up first to be able to add items to your cart."
+          btnName="Sign Up"
+          btnClass="white bg-gradient"
+          funcToDo={() => history.push(`/signup/`)}
+          cancel={() => setDialog(false)}
+        />
+      )}
+      {quantityDialog && (
+        <QuantityDialog
+          head={itemToQuantify.itemName}
+          headClass="bg-gradient white"
+          btnClass="white bg-gradient-tertiary"
+          btnName="ADD TO CART"
+          setQuantity={setQuantity}
+          funcToDo={() => {
+            console.log(
+              `Added item number ${itemToQuantify.itemId}, with quantity of ${quantity}.`
+            );
+            setQuantityDialog(false);
+          }}
+          cancel={() => setQuantityDialog(false)}
+        />
+      )}
       <Navbar />
       {store && (
         <div
@@ -70,7 +115,9 @@ const Home = () => {
                           />
                           <p>EGP {item.price}</p>
                         </div>
-                        <button className="btn bg-gradient-tertiary white">
+                        <button
+                          onClick={() => handleAdd(item.id, item.name)}
+                          className="btn bg-gradient-tertiary white">
                           Add
                         </button>
                       </div>
