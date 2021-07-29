@@ -5,18 +5,19 @@ import StarRatings from 'react-star-ratings';
 import Navbar from '../components/Navbar.jsx';
 import Dialog from '../components/Dialog.jsx';
 import QuantityDialog from '../components/QuantityDialog.jsx';
-import { storeIndex } from '../Helpers';
+import { storeIndex, AddItemToCart } from '../Helpers';
 import '../styles/home.css';
 
 const Home = () => {
   const [store, setStore] = useState();
-  const [quantity, setQuantity] = useState();
+  const [quantity, setQuantity] = useState(1);
   const history = useHistory();
   const [dialog, setDialog] = useState();
   const [quantityDialog, setQuantityDialog] = useState();
   const [itemToQuantify, setItemToquantify] = useState();
   const storename = useParams(':storename');
   const user = JSON.parse(sessionStorage.getItem('Ma7ally-token'));
+
   useEffect(() => {
     storeIndex(storename.storename).then((data) => setStore(data));
   }, [storename]);
@@ -53,11 +54,18 @@ const Home = () => {
           setQuantity={setQuantity}
           funcToDo={() => {
             console.log(
-              `Added item number ${itemToQuantify.itemId}, with quantity of ${quantity}.`
+              `Added item number ${itemToQuantify.itemId}, with quantity of ${quantity} ${user}.`
             );
+            AddItemToCart(itemToQuantify.itemId, quantity, user).then((res) =>
+              console.log(res)
+            );
+            setQuantity(1);
             setQuantityDialog(false);
           }}
-          cancel={() => setQuantityDialog(false)}
+          cancel={() => {
+            setQuantityDialog(false);
+            setQuantity(1);
+          }}
         />
       )}
       <Navbar />

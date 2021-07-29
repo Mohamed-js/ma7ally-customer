@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Cart from './containers/Cart.jsx';
 import Category from './containers/Category.jsx';
 import Home from './containers/Home.jsx';
 import Item from './containers/Item.jsx';
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/:storename" component={Home} />
           <Route exact path="/:storename/item/:id" component={Item} />
           <Route exact path="/:storename/category/:id" component={Category} />
+          <Route exact path="/:storename/cart" component={Cart} />
         </Switch>
       </Router>
     </div>

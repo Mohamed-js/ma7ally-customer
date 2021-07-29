@@ -1,0 +1,28 @@
+.cart-items {
+  padding: 10px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  border: 1px solid rgba(128, 128, 128, 0.301);
+  border-radius: 5px;
+  max-height: 130px;
+  max-width: 470px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart-item-img {
+  text-align: center;
+}
+
+.cart-item-img img {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.cart-item .secondary {
+  font-weight: 600;
+  font-size: large;
+}
