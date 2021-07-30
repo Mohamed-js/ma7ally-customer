@@ -77,3 +77,13 @@ export const cartItems = async (userToken) => {
     .then((data) => data);
   return respond;
 };
+
+export const delCartItem = async (userToken, itemId) => {
+  const respond = await fetch(`${baseURL}/carts/${itemId}`, {
+    headers: { 'Content-Type': 'application/json', Authorization: userToken },
+    method: 'DELETE',
+  })
+    .then((res) => res.json())
+    .then((data) => data);
+  return respond;
+};

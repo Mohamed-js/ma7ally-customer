@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
-import StarRatings from 'react-star-ratings';
 import Navbar from '../components/Navbar.jsx';
 import Dialog from '../components/Dialog.jsx';
 import QuantityDialog from '../components/QuantityDialog.jsx';
 import { storeIndex, AddItemToCart } from '../Helpers';
 import '../styles/home.css';
+import HomeCard from '../components/HomeCard.jsx';
 
 const Home = () => {
   const [store, setStore] = useState();
@@ -53,12 +53,7 @@ const Home = () => {
           btnName="ADD TO CART"
           setQuantity={setQuantity}
           funcToDo={() => {
-            console.log(
-              `Added item number ${itemToQuantify.itemId}, with quantity of ${quantity} ${user}.`
-            );
-            AddItemToCart(itemToQuantify.itemId, quantity, user).then((res) =>
-              console.log(res)
-            );
+            AddItemToCart(itemToQuantify.itemId, quantity, user)
             setQuantity(1);
             setQuantityDialog(false);
           }}
@@ -96,40 +91,11 @@ const Home = () => {
               {store.items.map((item) => {
                 if (item.category_id === category.id) {
                   return (
-                    <div className="card p-2">
-                      <Link to={`${storename.storename}/item/${item.id}`}>
-                        <h3 className="text-center pt-2">{item.name}</h3>
-                        <p className="text-center secondary">
-                          {item.size} {item.unit}
-                        </p>
-                        <div className="item-img m-2">
-                          <img
-                            src={item.image_data}
-                            alt={item.name}
-                            className="full-img"
-                          />
-                        </div>
-                      </Link>
-                      <div className="item-info flex-col justify-center mt-3">
-                        <div className="m-1 mb-0">
-                          <StarRatings
-                            rating={3}
-                            starRatedColor="#00cc88"
-                            changeRating={2}
-                            starDimension="17px"
-                            starSpacing="3px"
-                            numberOfStars={5}
-                            name="rating"
-                          />
-                          <p>EGP {item.price}</p>
-                        </div>
-                        <button
-                          onClick={() => handleAdd(item.id, item.name)}
-                          className="btn bg-gradient-tertiary white">
-                          Add
-                        </button>
-                      </div>
-                    </div>
+                    <HomeCard
+                      item={item}
+                      storename={storename}
+                      handleAdd={handleAdd}
+                    />
                   );
                 }
               })}

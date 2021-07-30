@@ -87,7 +87,7 @@ const Category = () => {
 
             <div className="grid mt-5 p-1">
               {catItems.map((item) => (
-                <div className="s-card p-2">
+                <div key={item.id} className="s-card p-2">
                   <Link to={`/${param.storename}/item/${item.id}`}>
                     <h3 className="text-center pt-2">{item.name}</h3>
                     <p className="text-center secondary">

@@ -379,8 +379,18 @@ hr {
   z-index: 1;
 }
 
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
 .w-100 {
   width: 100%;
+}
+
+.w-50 {
+  width: 50%;
 }
 
 select {

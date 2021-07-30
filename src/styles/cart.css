@@ -7,7 +7,7 @@
   grid-template-columns: 2fr 5fr;
   border: 1px solid rgba(128, 128, 128, 0.301);
   border-radius: 5px;
-  max-height: 130px;
+  height: 130px;
   max-width: 470px;
   margin-left: auto;
   margin-right: auto;
@@ -25,4 +25,28 @@
 .cart-item .secondary {
   font-weight: 600;
   font-size: large;
+}
+
+.cart-item-info {
+  position: relative;
+}
+.cart-bottom {
+  height: 130px;
+  border-left: 4px solid #4a2158;
+}
+
+.cart-bottom-fader {
+  position: fixed;
+  bottom: 125px;
+  background: linear-gradient(to top, white 25%, rgba(255, 255, 255, 0));
+  padding: 10px;
+}
+
+.remove-item {
+  width: 32px;
+  position: absolute;
+  right: -12px;
+  top: -11px;
+  background: hsl(240deg 7% 97%);
+  color: rgb(71 82 93 / 62%);
 }
