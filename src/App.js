@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Cart from './containers/Cart.jsx';
 import Category from './containers/Category.jsx';
+import Checkout from './containers/Checkout.jsx';
 import Home from './containers/Home.jsx';
 import Item from './containers/Item.jsx';
 import Login from './containers/Login.jsx';
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/:storename/item/:id" component={Item} />
           <Route exact path="/:storename/category/:id" component={Category} />
           <Route exact path="/:storename/cart" component={Cart} />
+          <Route exact path="/:storename/checkout" component={Checkout} />
         </Switch>
       </Router>
     </div>
