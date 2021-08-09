@@ -53,7 +53,7 @@ const Home = () => {
           btnName="ADD TO CART"
           setQuantity={setQuantity}
           funcToDo={() => {
-            AddItemToCart(itemToQuantify.itemId, quantity, user)
+            AddItemToCart(itemToQuantify.itemId, quantity, user);
             setQuantity(1);
             setQuantityDialog(false);
           }}
@@ -92,6 +92,7 @@ const Home = () => {
                 if (item.category_id === category.id) {
                   return (
                     <HomeCard
+                      key={item.id}
                       item={item}
                       storename={storename}
                       handleAdd={handleAdd}
