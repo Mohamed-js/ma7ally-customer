@@ -30,7 +30,9 @@ const Navbar = () => {
     return (
       <nav className="flex-row justify-between w-100 align-center bg-gradient p-4 fixed">
         <Link to={`/${params.storename}`}>
-          <h1 className="btn tertiary p-1 nav-logo">{params.storename}</h1>
+          <h1 className="btn tertiary p-1 nav-logo">
+            {params.storename.toUpperCase()}
+          </h1>
         </Link>
 
         <button onClick={Logout} className="btn bg-transparent secondary p-2">

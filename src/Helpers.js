@@ -87,3 +87,14 @@ export const delCartItem = async (userToken, itemId) => {
     .then((data) => data);
   return respond;
 };
+
+export const addOrder = async (userToken, orderInfo) => {
+  const respond = await fetch(`${baseURL}/orders/`, {
+    headers: { 'Content-Type': 'application/json', Authorization: userToken },
+    method: 'POST',
+    body: JSON.stringify(orderInfo),
+  })
+    .then((res) => res.json())
+    .then((data) => data);
+  return respond;
+};

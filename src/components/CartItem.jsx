@@ -12,6 +12,7 @@ const CartItem = ({
   quantity,
   availability,
   image,
+  orderpage,
 }) => {
   const user = JSON.parse(sessionStorage.getItem('Ma7ally-token'));
   const handleClick = (id) => {
@@ -25,13 +26,15 @@ const CartItem = ({
         <img src={image} alt={itemName} className="full-img" />
       </div>
       <div className="cart-item-info m-1 flex-col justify-between">
-        <button
-          onClick={() => {
-            handleClick(itemId);
-          }}
-          className="remove-item m-1 btn p-1">
-          X
-        </button>
+        {deleted && (
+          <button
+            onClick={() => {
+              handleClick(itemId);
+            }}
+            className="remove-item m-1 btn p-1">
+            X
+          </button>
+        )}
         <h4 className="name">{itemName}</h4>
         <p className="price">
           Unit price: <span className="secondary">{price}$</span>
@@ -53,6 +56,11 @@ const CartItem = ({
               <FontAwesomeIcon icon={faExclamationCircle} />
             </span>{' '}
             Maybe not available.
+          </p>
+        )}
+        {orderpage && (
+          <p className="availability ">
+            Total: <span className="secondary">{price * quantity}$</span>
           </p>
         )}
       </div>

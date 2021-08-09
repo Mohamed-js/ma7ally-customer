@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { cartItems } from '../Helpers';
 import Navbar from '../components/Navbar';
-import Dialog from '../components/Dialog.jsx';
 import CartItem from '../components/CartItem.jsx';
 import CartBottom from '../components/CartBottom.jsx';
 import '../styles/cart.css';
