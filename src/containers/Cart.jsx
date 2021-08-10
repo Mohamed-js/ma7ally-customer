@@ -4,14 +4,14 @@ import Navbar from '../components/Navbar';
 import CartItem from '../components/CartItem.jsx';
 import CartBottom from '../components/CartBottom.jsx';
 import '../styles/cart.css';
-
+import { useParams } from 'react-router-dom';
 const Cart = () => {
   const [carts, setCarts] = useState();
   const [change, setChange] = useState(0);
   const user = JSON.parse(sessionStorage.getItem('Ma7ally-token'));
-
+  const params = useParams(':storename');
   useEffect(() => {
-    cartItems(user).then((data) => {
+    cartItems(user, params.storename).then((data) => {
       setCarts(data);
     });
   }, [user, change]);

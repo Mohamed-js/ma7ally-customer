@@ -53,7 +53,12 @@ const Home = () => {
           btnName="ADD TO CART"
           setQuantity={setQuantity}
           funcToDo={() => {
-            AddItemToCart(itemToQuantify.itemId, quantity, user);
+            AddItemToCart(
+              itemToQuantify.itemId,
+              quantity,
+              user,
+              storename.storename
+            );
             setQuantity(1);
             setQuantityDialog(false);
           }}

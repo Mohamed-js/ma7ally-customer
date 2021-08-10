@@ -54,22 +54,26 @@ export const storeItem = async (storename, itemId) => {
   return respond;
 };
 
-export const AddItemToCart = async (itemId, quantity, userToken) => {
+export const AddItemToCart = async (itemId, quantity, userToken, storeName) => {
   const respond = await fetch(`${baseURL}/carts`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: userToken,
     },
     method: 'POST',
-    body: JSON.stringify({ cart: { item_id: itemId, quantity: quantity } }),
+    body: JSON.stringify({
+      item_id: itemId,
+      quantity: quantity,
+      storename: storeName,
+    }),
   })
     .then((res) => res.json())
     .then((data) => data);
   return respond;
 };
 
-export const cartItems = async (userToken) => {
-  const respond = await fetch(`${baseURL}/carts`, {
+export const cartItems = async (userToken, storeName) => {
+  const respond = await fetch(`${baseURL}/carts?storename=${storeName}`, {
     headers: { 'Content-Type': 'application/json', Authorization: userToken },
     method: 'GET',
   })

@@ -27,7 +27,7 @@ const Checkout = () => {
   };
 
   useEffect(() => {
-    cartItems(user).then((data) => {
+    cartItems(user, params.storename).then((data) => {
       if (!data.length) {
         history.goBack();
       }

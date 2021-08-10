@@ -58,7 +58,7 @@ const Category = () => {
             console.log(
               `Added item number ${itemToQuantify.itemId}, with quantity of ${quantity} ${user}.`
             );
-            AddItemToCart(itemToQuantify.itemId, quantity, user).then((res) =>
+            AddItemToCart(itemToQuantify.itemId, quantity, user, param.storename).then((res) =>
               console.log(res)
             );
             setQuantity(1);
