@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import { cartItems, addOrder } from '../Helpers';
 import Navbar from '../components/Navbar';
 import CartItem from '../components/CartItem.jsx';
@@ -6,7 +8,9 @@ import '../styles/checkout.css';
 
 const Checkout = () => {
   const [carts, setCarts] = useState();
-  const [orderInfo, SetOrderInfo] = useState({});
+  const history = useHistory();
+  const params = useParams(':storename');
+  const [orderInfo, SetOrderInfo] = useState({ storename: params.storename });
   const user = JSON.parse(sessionStorage.getItem('Ma7ally-token'));
 
   const handleChange = (e) => {
@@ -15,15 +19,21 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addOrder(user, orderInfo).then((res) => console.log(res));
-    console.log(orderInfo);
+    addOrder(user, orderInfo).then((res) => {
+      if (res.message === 'Order placed successfully!') {
+        history.push(`/${params.storename}`);
+      }
+    });
   };
 
   useEffect(() => {
     cartItems(user).then((data) => {
+      if (!data.length) {
+        history.goBack();
+      }
       setCarts(data);
     });
-  }, [user]);
+  }, [user, history]);
   return (
     <div>
       <Navbar />
