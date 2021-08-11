@@ -41,7 +41,7 @@ const Home = () => {
           body="You have to sign up first to be able to add items to your cart."
           btnName="Sign Up"
           btnClass="white bg-gradient"
-          funcToDo={() => history.push(`/signup/`)}
+          funcToDo={() => history.push(`/${storename.storename}/signup/`)}
           cancel={() => setDialog(false)}
         />
       )}

@@ -5,6 +5,7 @@ import { signup } from '../Helpers';
 
 const SignUp = () => {
   const history = useHistory();
+  const params = useParams();
   const [credits, setCredits] = useState();
   const [failure, setFailure] = useState();
 
@@ -95,7 +96,7 @@ const SignUp = () => {
         />
       </form>
 
-      <Link to="/login" className="p-3">
+      <Link to={`/${params.storename}/login`} className="p-3">
         Already have an account? Click here...
       </Link>
     </div>
