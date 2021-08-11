@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { cartItems } from '../Helpers';
+import { useHistory } from 'react-router';
 import Navbar from '../components/Navbar';
 import CartItem from '../components/CartItem.jsx';
 import CartBottom from '../components/CartBottom.jsx';
@@ -8,10 +9,14 @@ import { useParams } from 'react-router-dom';
 const Cart = () => {
   const [carts, setCarts] = useState();
   const [change, setChange] = useState(0);
+  const history = useHistory();
   const user = JSON.parse(sessionStorage.getItem('Ma7ally-token'));
   const params = useParams(':storename');
   useEffect(() => {
     cartItems(user, params.storename).then((data) => {
+      if (!user) {
+        history.goBack();
+      }
       setCarts(data);
     });
   }, [user, change]);

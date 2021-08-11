@@ -76,7 +76,7 @@ const Home = () => {
             backgroundImage: `url("${store.store.image_data}")`,
           }}>
           <div>
-            <h1 className="headline">{store.store.storename}</h1>
+            <h1 className="headline">{store.store.storename.toUpperCase()}</h1>
           </div>
         </div>
       )}

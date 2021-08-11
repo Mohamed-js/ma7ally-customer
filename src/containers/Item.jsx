@@ -77,7 +77,7 @@ const Item = () => {
       <div className="container flex-col">
         {item && (
           <div>
-            <h1 className="text-center pt-5 pb-5">{item.name}</h1>
+            <h1 className="text-center pt-4 pb-5 mt-1">{item.name}</h1>
             <Slide>
               <div className="each-slide">
                 <div>
