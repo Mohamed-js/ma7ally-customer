@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { signin } from '../Helpers';
 
 const Login = () => {
   const history = useHistory();
+  const params = useParams();
   const [credits, setCredits] = useState();
   const [failure, setFailure] = useState();
 
@@ -35,7 +37,7 @@ const Login = () => {
       'Ma7ally-token',
       JSON.stringify(respond.authentication_token)
     );
-    history.go(-2);
+    history.push(`/${params.storename}`);
   };
 
   return (

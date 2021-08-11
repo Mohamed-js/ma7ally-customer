@@ -69,7 +69,7 @@ const Home = () => {
         />
       )}
       <Navbar />
-      {store && (
+      {store && store.store && (
         <div
           className="cover flex-col align-center justify-center"
           style={{
@@ -81,6 +81,7 @@ const Home = () => {
         </div>
       )}
       {store &&
+        store.store &&
         store.categories.map((category) => (
           <div key={category.id} className="cat-holder p-2 pt-4">
             <h3 className="p3">

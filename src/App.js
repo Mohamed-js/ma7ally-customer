@@ -13,13 +13,20 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/:storename/login" component={Login} />
+          <Route exact path="/:storename/signup" component={SignUp} />
           <Route exact path="/:storename" component={Home} />
           <Route exact path="/:storename/item/:id" component={Item} />
           <Route exact path="/:storename/category/:id" component={Category} />
           <Route exact path="/:storename/cart" component={Cart} />
           <Route exact path="/:storename/checkout" component={Checkout} />
+          <Route
+            component={() => (
+              <div className="text-center p-5">
+                404 Not found - And some other text here!
+              </div>
+            )}
+          />
         </Switch>
       </Router>
     </div>

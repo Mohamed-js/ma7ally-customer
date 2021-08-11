@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const Logout = () => {
     sessionStorage.removeItem('Ma7ally-token');
-    history.push('/login');
+    history.push(`/${params.storename}/login`);
   };
 
   const handleSideBar = () => {
@@ -61,12 +61,12 @@ const Navbar = () => {
             <div className="inner-links">
               <Link
                 className="btn bg-transparent secondary p-2 mt-2"
-                to="/signup">
+                to={`${params.storename}/signup`}>
                 Sign Up
               </Link>
               <Link
                 className="btn bg-transparent secondary p-2 mt-2"
-                to="/login">
+                to={`${params.storename}/login`}>
                 Login
               </Link>
             </div>
@@ -92,20 +92,6 @@ const Navbar = () => {
       </nav>
     </div>
   );
-
-  // if (user) {
-  //   return (
-  //     <nav className="flex-row justify-between w-100 align-center bg-gradient p-4 fixed">
-  //       <Link to={`/${params.storename}`}>
-  //         <h1 className="btn tertiary p-1 nav-logo">
-  //           {params.storename.toUpperCase()}
-  //         </h1>
-  //       </Link>
-
-  //
-  //     </nav>
-  //   );
-  // }
 };
 
 export default Navbar;
