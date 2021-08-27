@@ -7,6 +7,8 @@ import QuantityDialog from '../components/QuantityDialog.jsx';
 import { storeIndex, AddItemToCart } from '../Helpers';
 import '../styles/home.css';
 import HomeCard from '../components/HomeCard.jsx';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Home = () => {
   const [store, setStore] = useState();
@@ -70,21 +72,34 @@ const Home = () => {
       )}
       <Navbar />
       {store && store.store && (
-        <div
-          className="cover flex-col align-center justify-center"
-          style={{
-            backgroundImage: `url("${store.store.image_data}")`,
-          }}>
-          <div>
-            <h1 className="headline">{store.store.storename.toUpperCase()}</h1>
+        <div>
+          <div
+            className="cover flex-col align-center justify-center"
+            style={{
+              backgroundImage: `url("${store.store.image_data}")`,
+            }}>
+            <div>
+              <h1 className="headline">
+                {store.store.storename.toUpperCase()}
+              </h1>
+              <a className="down-btn btn tertiary" href="#cats">
+                <FontAwesomeIcon icon={faArrowDown} />
+              </a>
+            </div>
           </div>
+          <h1 id="cats" className="p-4 text-center">
+            <br />
+          </h1>
+          <h1 id="cats" className="p-3 text-center">
+            Categories
+          </h1>
         </div>
       )}
       {store &&
         store.store &&
         store.categories.map((category) => (
           <div key={category.id} className="cat-holder p-2 pt-4 m-auto">
-            <h3 className="p3">
+            <h3 className="p-3">
               {category.name.toUpperCase()}
               {/* eslint-disable-next-line */}
               <Link

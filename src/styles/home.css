@@ -8,8 +8,30 @@
   }
 }
 
+@keyframes move-up-down {
+  0% {
+    transform: translateY(8px);
+  }
+
+  10% {
+    transform: translateY(5px);
+  }
+
+  30% {
+    transform: translateY(4px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .cover {
-  height: 90vh;
+  height: 100vh;
   background-size: cover;
   background-position: center;
 }
@@ -27,9 +49,11 @@
 }
 
 .cover h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  text-align: center;
-  font-size: 60px;
+  font-size: 55px;
   background-color: rgba(0, 0, 0, 0.582);
   color: #ff9800;
   padding: 10px;
@@ -83,4 +107,27 @@
 
 .cat-holder {
   max-width: 1170px;
+}
+
+.down-btn {
+  position: absolute;
+  bottom: 50px;
+  border-radius: 50%;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.582);
+  font-size: 25px;
+  animation: move-up-down 1s alternate-reverse infinite ease-in-out;
+}
+
+@media screen and (min-width: 468px) {
+  .cover h1 {
+    font-size: 65px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cover h1 {
+    font-size: 100px;
+    height: 200px;
+  }
 }
