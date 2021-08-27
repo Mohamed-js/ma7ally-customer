@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api/v1';
+const baseURL = 'https://ma7ally-api.herokuapp.com/api/v1';
 
 export const signup = async (credits) => {
   const respond = await fetch(`${baseURL}/users`, {
