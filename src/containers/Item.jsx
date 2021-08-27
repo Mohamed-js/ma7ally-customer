@@ -74,22 +74,23 @@ const Item = () => {
         />
       )}
       <Navbar />
-      <div className="container flex-col">
+      <div className="container">
         {item && (
-          <div>
-            <h1 className="text-center pt-4 pb-5 mt-1">{item.name}</h1>
-            <Slide>
-              <div className="each-slide">
-                <div>
-                  <img
-                    className="full-img"
-                    src={item.image_data}
-                    alt={item.name}
-                  />
+          <div className="item-holder m-auto pt-5">
+            <div className="max-height slide-cont">
+              <Slide>
+                <div className="each-slide mt-5 max-height">
+                  <div className="mt-5 max-height">
+                    <img
+                      className="full-img max-height"
+                      src={item.image_data}
+                      alt={item.name}
+                    />
+                  </div>
                 </div>
-              </div>
-            </Slide>
-            <div className="p-1">
+              </Slide>
+            </div>
+            <div className="p-1 flex-col justify-content-center">
               <h2 className="p-1">{item.name}</h2>
               <hr className="hr-short" />
 

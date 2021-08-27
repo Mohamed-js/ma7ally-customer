@@ -3,3 +3,44 @@
 .each-slide {
   transition: none;
 }
+
+.max-height {
+  max-height: 500px;
+}
+
+@media screen and (min-width: 768px) {
+  .item-holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+  }
+
+  .container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .slide {
+    max-height: 500px;
+  }
+
+  .slide-cont {
+    width: 400px;
+    padding-right: 30px;
+  }
+
+  .justify-content-center {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1370px) {
+  .slide-cont {
+    width: 600px;
+  }
+
+  .justify-content-center {
+    justify-content: center;
+  }
+}

@@ -83,7 +83,7 @@ const Home = () => {
       {store &&
         store.store &&
         store.categories.map((category) => (
-          <div key={category.id} className="cat-holder p-2 pt-4">
+          <div key={category.id} className="cat-holder p-2 pt-4 m-auto">
             <h3 className="p3">
               {category.name.toUpperCase()}
               {/* eslint-disable-next-line */}

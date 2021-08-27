@@ -1,5 +1,6 @@
 .grid {
   justify-items: center;
+  max-width: 1170px;
 }
 
 .s-card {
@@ -7,6 +8,7 @@
   min-width: 170px;
   height: 265px;
   box-shadow: rgba(128, 128, 128, 0.384) 1px 1px 5px;
+  max-width: 200px;
 }
 
 .item-img {
@@ -16,4 +18,24 @@
 .item-img img {
   object-fit: contain;
   max-height: 117px;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .s-card {
+    min-width: 190px;
+  }
+}
+
+@media screen and (min-width: 967px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .s-card {
+    min-width: 190px;
+  }
 }

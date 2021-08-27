@@ -57,6 +57,7 @@
   min-width: 195px;
   height: 265px;
   box-shadow: rgba(128, 128, 128, 0.384) 1px 1px 5px;
+  max-width: 200px;
 }
 
 .item-img {
@@ -78,4 +79,8 @@
   margin-left: 10px;
   font-size: 15px;
   font-weight: 300;
+}
+
+.cat-holder {
+  max-width: 1170px;
 }
