@@ -5,13 +5,13 @@
 
 .s-card {
   width: calc(50% - 15px);
-  min-width: 165px;
+  min-width: 170px;
   height: 265px;
   box-shadow: rgba(128, 128, 128, 0.384) 1px 1px 5px;
 }
 
 .item-img {
-  height: 117px;
+  height: 115px;
 }
 
 .item-img img {

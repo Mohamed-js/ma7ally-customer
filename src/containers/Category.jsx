@@ -58,9 +58,12 @@ const Category = () => {
             console.log(
               `Added item number ${itemToQuantify.itemId}, with quantity of ${quantity} ${user}.`
             );
-            AddItemToCart(itemToQuantify.itemId, quantity, user, param.storename).then((res) =>
-              console.log(res)
-            );
+            AddItemToCart(
+              itemToQuantify.itemId,
+              quantity,
+              user,
+              param.storename
+            ).then((res) => console.log(res));
             setQuantity(1);
             setQuantityDialog(false);
           }}
@@ -116,7 +119,7 @@ const Category = () => {
                     </div>
                     <button
                       onClick={() => handleAdd(item.id, item.name)}
-                      className="btn bg-gradient-tertiary white">
+                      className="btn bg-gradient-tertiary white p-0">
                       Add
                     </button>
                   </div>
