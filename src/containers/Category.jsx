@@ -88,7 +88,7 @@ const Category = () => {
               </h1>
             )}
 
-            <div className="grid mt-5 p-1">
+            <div className="grid mt-5">
               {catItems.map((item) => (
                 <div key={item.id} className="s-card p-2">
                   <Link to={`/${param.storename}/item/${item.id}`}>
