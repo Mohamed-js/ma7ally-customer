@@ -8,6 +8,10 @@
   max-height: 500px;
 }
 
+.react-slideshow-wrapper {
+  margin-top: 35px;
+}
+
 @media screen and (min-width: 768px) {
   .item-holder {
     display: grid;
