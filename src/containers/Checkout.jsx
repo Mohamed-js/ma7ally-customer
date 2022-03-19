@@ -46,7 +46,7 @@ const Checkout = () => {
         <h1 className="text-center">Checkout</h1>
       </div>
       <div className="p-2">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="max-width m-auto">
           {/* Shipping Address */}
           <div className="shipping-address p-2">
             <h3 className="text-center mb-2">Shipping Address</h3>
