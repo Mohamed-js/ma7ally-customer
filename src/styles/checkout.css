@@ -6,3 +6,15 @@
 .total {
   font-size: 25px;
 }
+
+@media screen and (min-width: 1170px) {
+  .devider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  form.max-width {
+    max-width: 100%;
+  }
+}
