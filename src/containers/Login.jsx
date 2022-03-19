@@ -41,14 +41,14 @@ const Login = () => {
   };
 
   return (
-    <div className="flex-col">
+    <div className="flex-col max-width m-auto">
       <h1 className="text-center m-5">Login</h1>
       <br />
       {failure && <span className="alert-bad">{failure}</span>}
       <br />
       <br />
       <br />
-      <form onSubmit={handleSubmit} className="signup flex-col  p-3">
+      <form onSubmit={handleSubmit} className="signup flex-col p-3">
         <input
           onChange={handleChange}
           type="text"

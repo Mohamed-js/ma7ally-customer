@@ -44,7 +44,7 @@ const SignUp = () => {
     btn.style.backgroundColor = '#ff9800';
   }
   return (
-    <div>
+    <div className="m-auto max-width">
       <h1 className="text-center m-5">Sign Up</h1>
 
       <div className="flex-col center">

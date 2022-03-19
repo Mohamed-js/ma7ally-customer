@@ -61,12 +61,12 @@ const Navbar = () => {
             <div className="inner-links">
               <Link
                 className="btn bg-transparent secondary p-2 mt-2"
-                to={`${params.storename}/signup`}>
+                to={`/${params.storename}/signup`}>
                 Sign Up
               </Link>
               <Link
                 className="btn bg-transparent secondary p-2 mt-2"
-                to={`${params.storename}/login`}>
+                to={`/${params.storename}/login`}>
                 Login
               </Link>
             </div>

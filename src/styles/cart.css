@@ -49,4 +49,5 @@
   top: -11px;
   background: hsl(240deg 7% 97%);
   color: rgb(71 82 93 / 62%);
+  cursor: pointer;
 }
